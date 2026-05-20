@@ -11,7 +11,6 @@
 
 <br/>
 
-> *"Because in healthcare, a hallucination isn't just wrong — it's dangerous."*
 
 <br/>
 
@@ -19,7 +18,7 @@
 
 ---
 
-## 👋 What Is This Project?
+##  What Is This Project?
 
 This is an **AI-powered healthcare document assistant** that lets you ask plain-English questions about health topics — symptoms, diseases, prevention, medications, and more — and get answers that are actually **grounded in trusted medical documents**.
 
@@ -29,20 +28,18 @@ This project was built to solve a real problem: **LLMs hallucinate**, and in a d
 
 ---
 
-## 🤔 Why Build This?
+##  Why Build This?
 
-Here's the honest reasoning behind this project:
 
 - **Hallucinations are dangerous in healthcare.** An LLM confidently giving wrong medical information can cause real harm. This project directly tackles that by anchoring every answer to actual document content.
 - **RAG is the industry standard.** Nearly every production AI system that needs reliable, up-to-date, or domain-specific knowledge uses some form of RAG. Building one from scratch is how you truly understand it.
 - **It's a complete, deployable AI system** — not just a notebook. Embeddings, vector search, prompt engineering, LLM integration, and a live frontend all working together.
-- **Portfolio-ready for AI/ML roles.** This project demonstrates the full pipeline that interviewers and hiring managers actually care about.
+
 
 ---
 
-## 🧠 What Even Is RAG?
+##  What Even Is RAG?
 
-Great question. Here's the intuition:
 
 A regular LLM is like asking a friend who's read a lot of books but might misremember things. A **RAG system** is like giving that same friend your specific documents to read *right before* they answer. They're no longer relying on memory — they're working from the material in front of them.
 
@@ -109,9 +106,9 @@ Every step in this pipeline is intentional. Nothing is left to chance or blind g
 
 ---
 
-## ✨ Features
+##  Features
 
-### 📚 Medical PDF Question Answering
+###  Medical PDF Question Answering
 Ask anything covered by the uploaded healthcare documents. The system finds the right sections and uses them to craft the answer.
 
 ```
@@ -121,35 +118,35 @@ Ask anything covered by the uploaded healthcare documents. The system finds the 
 "What are the side effects of creatine?"
 ```
 
-### 🔍 Semantic Search (Not Just Keywords)
+###  Semantic Search (Not Just Keywords)
 The system understands *meaning*, not just matching words. So if you ask about **"high blood pressure"**, it can correctly retrieve content about **"hypertension"** — because the embeddings know they mean the same thing.
 
-### 🧩 Semantic Chunking
+###  Semantic Chunking
 Most RAG tutorials split documents every N characters. This project does it better — chunks are created based on **semantic boundaries** (meaning and context). This leads to:
 - More coherent retrieved chunks
 - Better answer quality
 - Stronger grounding for the LLM
 
-### ⚡ FAISS Vector Database
+###  FAISS Vector Database
 All document embeddings are stored in a **FAISS index**, enabling lightning-fast similarity search at scale. No slow brute-force comparisons.
 
-### 🤖 Gemini-Powered Generation
+###  Gemini-Powered Generation
 The LLM backend is **Google Gemini** (`gemini-flash-lite-latest`), chosen for being:
 - Fast and responsive
 - Free-tier friendly
 - Well-suited to structured, readable responses
 - Efficient for RAG-style prompts
 
-### 📎 Source-Grounded Answers
+###  Source-Grounded Answers
 Every answer comes with the **source chunks it was built from**, displayed in expandable sections. Users can see exactly where the information came from — no black box.
 
-### ⚠️ Built-in Medical Disclaimer
+###  Built-in Medical Disclaimer
 The app surfaces a clear, persistent disclaimer:
 > *This project is built for AI/RAG learning purposes only. It is not a substitute for professional medical advice. Always consult a qualified healthcare provider.*
 
 This isn't an afterthought — responsible AI in healthcare means making limitations visible.
 
-### 🎨 Polished Streamlit Frontend
+###  Polished Streamlit Frontend
 The UI isn't just functional — it's designed to feel good to use:
 - Clean, modern layout
 - Sidebar navigation
@@ -158,12 +155,12 @@ The UI isn't just functional — it's designed to feel good to use:
 - Expandable source sections
 - Disclaimer panel
 
-### 🌍 Deployed & Publicly Accessible
+###  Deployed & Publicly Accessible
 The application is live on **Streamlit Community Cloud** — shareable via a public URL, no setup required for end users.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -180,7 +177,7 @@ The application is live on **Streamlit Community Cloud** — shareable via a pub
 
 ---
 
-## 🧪 Concepts Demonstrated
+##  Concepts Demonstrated
 
 This project isn't just about the code — it's a practical demonstration of a wide set of AI/ML concepts:
 
@@ -206,70 +203,8 @@ This project isn't just about the code — it's a practical demonstration of a w
 
 ---
 
-## 🚀 Getting Started
 
-### Prerequisites
-
-```bash
-python >= 3.10
-A Google Gemini API key (free tier works)
-```
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/healthcare-rag-assistant.git
-cd healthcare-rag-assistant
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Environment Setup
-
-Create a `.env` file in the project root:
-
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
-```
-
-### Add Your PDFs
-
-Drop your healthcare PDF documents into the `/data` folder. The system will process and index them automatically on first run.
-
-### Run the App
-
-```bash
-streamlit run app.py
-```
-
-Open your browser at `http://localhost:8501` and start asking questions.
-
----
-
-## 📁 Project Structure
-
-```
-healthcare-rag-assistant/
-│
-├── app.py                   # Streamlit frontend and main app logic
-├── rag_pipeline.py          # Core RAG pipeline (retrieval + generation)
-├── embeddings.py            # Embedding model setup
-├── vector_store.py          # FAISS index creation and search
-├── chunking.py              # Semantic chunking logic
-│
-├── data/                    # Your healthcare PDFs go here
-├── faiss_index/             # Persisted vector store
-│
-├── requirements.txt
-├── .env.example
-└── README.md
-```
-
----
-
-## 💡 Example Questions to Try
+##  Example Questions to Try
 
 Once the app is running, here are some questions worth asking:
 
@@ -286,7 +221,7 @@ Once the app is running, here are some questions worth asking:
 
 ---
 
-## ⚠️ Important Disclaimer
+##  Important Disclaimer
 
 > **This application is built purely for educational and AI/RAG learning purposes.**
 >
@@ -296,25 +231,6 @@ Once the app is running, here are some questions worth asking:
 
 ---
 
-## 🎯 Who This Is For
-
-- **AI/ML learners** who want to see a complete RAG system built from scratch
-- **Portfolio builders** looking for a meaningful, real-world GenAI project
-- **Developers** curious about LangChain, FAISS, and Gemini integration
-- **Anyone** interested in responsible AI for sensitive domains
-
----
-
-## 🔮 What Could Come Next
-
-Some directions this project could evolve:
-
-- 🔄 Support for uploading PDFs directly through the UI
-- 🌐 Multi-language support for regional healthcare accessibility
-- 🧬 Specialised document collections (cardiology, oncology, nutrition)
-- 💬 Conversational memory for multi-turn Q&A
-- 📊 Confidence scoring per retrieved chunk
-- 🔒 Role-based access control for institutional deployment
 
 ---
 
@@ -323,7 +239,5 @@ Some directions this project could evolve:
 **Built with curiosity, caffeine, and a genuine belief that AI can make healthcare information more accessible — responsibly.**
 
 <br/>
-
-*If this project helped you learn something, a ⭐ on the repo goes a long way.*
 
 </div>
